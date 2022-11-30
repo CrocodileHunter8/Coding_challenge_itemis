@@ -55,10 +55,10 @@ public class IOController {
         return eventsToSchedule;
     }
 
-    public static ArrayList<ConferenceEvent> readFilesInput(String[] args) throws IOException{
-        for (int i = 0; i < args.length ; i++) {
+    public static ArrayList<ConferenceEvent> readFilesInput(String[] args) throws IOException {
+        for (int i = 0; i < args.length; i++) {
 
-            try(Stream<String> stream = Files.lines(Paths.get(args[i]))){
+            try (Stream<String> stream = Files.lines(Paths.get(args[i]))) {
                 stream.forEach(line -> parseLine(line));
             }
 
@@ -76,7 +76,7 @@ public class IOController {
             // create Event and add it to arraylist
             ConferenceEvent event = new ConferenceEvent(line, length);
             eventsToSchedule.add(event);
-           // System.out.println(event.toString()); //debug
+            // System.out.println(event.toString()); //debug
         } catch (Exception e) {
             System.out.println("An error occured.");
             e.printStackTrace();
