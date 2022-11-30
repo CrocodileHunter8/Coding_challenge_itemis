@@ -36,7 +36,7 @@ public class PlanConferenceController {
         }
         return resultsTrackList; //output are multiple tracks
     }
-    
+
     static void printknapSack(int capacity, ArrayList<ConferenceEvent> sourceList, ArrayList<ConferenceEvent>  targetList)
     {
         /* implementing the knapsack algorithm into this method
