@@ -70,6 +70,12 @@ public class IOController {
         try {
             String[] words = line.split("\\s+");
             String durationString = words[words.length - 1];
+            if (durationString.endsWith("lightning")) {
+                durationString = durationString.replace("lightning", "5min");
+            }
+            if (durationString.endsWith("Lightning")) {
+                durationString = durationString.replace("Lightning", "5min");
+            }
             durationString = durationString.replaceAll("[^\\d]", "");
             int length = Integer.parseInt(durationString);
 

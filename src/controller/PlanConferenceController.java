@@ -12,13 +12,8 @@ public class PlanConferenceController {
     static ArrayList<Track> resultsTrackList = new ArrayList<Track>();
 
     public static ArrayList<Track> planConference(@NotNull ArrayList<ConferenceEvent> eventsToSchedule) throws ParseException {
-        // Knapsack problem
-        for (int i = 0; i < eventsToSchedule.size(); i++) {
-            if (eventsToSchedule.get(i).getName().endsWith("lightning")) {
-                eventsToSchedule.get(i).setName(eventsToSchedule.get(i).getName().replace("lightning", "5min"));
-            }
-        }
 
+        // Knapsack problem
         while (true) {
             // loop until all events are scheduled in tracks
             if (eventsToSchedule.isEmpty()) {
